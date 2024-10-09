@@ -262,6 +262,7 @@ def _py_isort_aspect_impl(target, ctx):
 
     ctx.actions.run(
         mnemonic = "isort",
+        progress_message = "isort %{label}",
         executable = executable,
         inputs = depset([ctx.file._config] + srcs),
         tools = runfiles.files,
